@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  ollama:
+    build: .
+    ports:
+      - "11434:11434"
+    volumes:
+      - "C:/Users/UTENTE/AppData/Local/Programs/Ollama:/usr/local/bin"
+      - "C:/Users/UTENTE/.ollama:/root/.ollama" # Se hai scaricato modelli, monta anche la directory dei dati
+    command: ["/usr/local/bin/ollama", "serve"]
